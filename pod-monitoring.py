@@ -13,7 +13,6 @@ def monitor_pods():
     v1 = client.CoreV1Api()
 
     try:
-        # Получение списка всех подов
         ret = v1.list_namespaced_pod(namespace="default")
         for i in ret.items:
             pod_name = i.metadata.name
